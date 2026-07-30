@@ -1,0 +1,113 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Manrope:wght@300;400;500;600;700;800&display=swap');
+
+@theme {
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Manrope", system-ui, sans-serif;
+  
+  --color-gold-50: #fdfbf7;
+  --color-gold-100: #fbf5e6;
+  --color-gold-200: #f4e7c7;
+  --color-gold-300: #ebd19a;
+  --color-gold-400: #e0b467;
+  --color-gold-500: #d19945;
+  --color-gold-600: #b57a32;
+  --color-gold-700: #965f24;
+  --color-gold-800: #7a4b1c;
+  --color-gold-900: #623a17;
+}
+
+:root {
+  --card-width: 170px;
+}
+@media (min-width: 640px) {
+  :root {
+    --card-width: 210px;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #0c0c0c;
+  color: #faf9f6;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6, .font-serif {
+  font-family: var(--font-serif);
+}
+
+/* custom selection color */
+::selection {
+  background-color: var(--color-gold-500);
+  color: #0c0c0c;
+}
+
+/* animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes slow-pan {
+  0% { transform: scale(1.02) translate3d(0, 0, 0); }
+  50% { transform: scale(1.08) translate3d(-1%, -0.5%, 0); }
+  100% { transform: scale(1.02) translate3d(0, 0, 0); }
+}
+
+.animate-slow-pan {
+  animation: slow-pan 25s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* Hide scrollbar for Chrome, Safari, Opera */
+::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+html, body {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 16s linear infinite;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+}
+
+/* GPU Hardware Acceleration & Smooth Scroll Optimizations */
+.transform-gpu {
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+.will-change-transform {
+  will-change: transform;
+}
+
+img {
+  content-visibility: auto;
+}
+

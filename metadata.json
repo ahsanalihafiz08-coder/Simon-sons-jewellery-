@@ -1,0 +1,6 @@
+{
+  "name": "Simon & Sons Jewelry Exchange",
+  "description": "A luxury jewelry boutique in Rego Park, NY, offering timeless jewelry crafted to perfection, custom designs, diamond collections, and master restoration services.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
